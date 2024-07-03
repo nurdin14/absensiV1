@@ -1,0 +1,7 @@
+Jawaban :
+5. : SELECT tb_karyawan.*, tb_absen.masuk, tb_absen.keluar FROM tb_karyawan LEFT JOIN tb_absen ON tb_karyawan.nik=tb_absen.nik;
+6. :
+- SELECT tb_karyawan.nik, tb_karyawan.nama, tb_karyawan.jk, tb_karyawan.tgl_lahir, tb_karyawan.dept, tb_absen.masuk, tb_absen.keluar FROM tb_karyawan LEFT JOIN tb_absen ON tb_karyawan.nik=tb_absen.nik WHERE NOT tb_absen.masuk='NULL' ORDER BY tb_absen.masuk ASC;
+- SELECT tb_karyawan.nik, tb_karyawan.nama, tb_karyawan.jk, tb_karyawan.tgl_lahir, tb_karyawan.dept, tb_absen.masuk, tb_absen.keluar FROM tb_karyawan LEFT JOIN tb_absen ON tb_karyawan.nik=tb_absen.nik WHERE NOT tb_absen.keluar='NULL' ORDER BY tb_absen.keluar ASC;
+- SELECT tb_karyawan.nik, tb_karyawan.nama, tb_karyawan.jk, tb_karyawan.tgl_lahir, tb_karyawan.dept, tb_absen.masuk, tb_absen.keluar, TIMESTAMPDIFF(HOUR, tb_absen.masuk, tb_absen.keluar) AS durasi_kerja FROM tb_karyawan LEFT JOIN tb_absen ON tb_karyawan.nik=tb_absen.nik WHERE NOT tb_absen.keluar='NULL' ORDER BY durasi_kerja DESC;
+7. : SELECT * FROM `tabel_hasil_query` WHERE masuk IS NULL AND keluar IS NULL;
